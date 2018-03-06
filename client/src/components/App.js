@@ -7,56 +7,72 @@ import ButtonClear from './ButtonClear';
 import ButtonOperation from './ButtonOperation';
 import ButtonPercent from './ButtonPercent';
 import ButtonSign from './ButtonSign';
+import Output from './Output';
+
+////////////////////////
+/*
+need to figure regex for one dot
+/ ^.*\.[0-9]* / doesnt work
+
+
+BUGS:
+
+04
+0..
+0000
+
+components doesnt render styles
+
+*/
+////////////////////////
 
 class App extends Component {
 	render() {
-		return <div>
-				<table border={1}>
+		return (
+			<div>
+				<table border={1} className="table">
 					<thead>
 						<tr>
-							<td colSpan={4}>
-								{this.props.displayMemory
-									? this.props.memory
-									: (this.props.input || 0)}
-							</td>
+							<Output className="td__dark-grey" />
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<ButtonClear clearingAll={parseFloat(this.props.input, 10) === 0} />
-							<ButtonSign />
-							<ButtonPercent />
-							<ButtonOperation operation={'/'} symbol={'÷'} />
+							<ButtonClear clearingAll={parseFloat(this.props.input) + '' === '0'} className="td__grey" />
+							<ButtonSign className="td__grey" />
+							<ButtonPercent className="td__grey" />
+							<ButtonOperation operation={'/'} symbol={'÷'} className="td__orange" />
 						</tr>
 						<tr>
-							<ButtonNumber digit={7} />
-							<ButtonNumber digit={8} />
-							<ButtonNumber digit={9} />
-							<ButtonOperation operation={'x'} symbol={'X'} />
+							<ButtonNumber digit={7} className="td__light-grey" />
+							<ButtonNumber digit={8} className="td__light-grey" />
+							<ButtonNumber digit={9} className="td__light-grey" />
+							<ButtonOperation operation={'x'} symbol={'X'} className="td__orange" />
 						</tr>
 						<tr>
-							<ButtonNumber digit={4} />
-							<ButtonNumber digit={5} />
-							<ButtonNumber digit={6} />
-							<ButtonOperation operation={'-'} symbol={'-'} />
+							<ButtonNumber digit={4} className="td__light-grey" />
+							<ButtonNumber digit={5} className="td__light-grey" />
+							<ButtonNumber digit={6} className="td__light-grey" />
+							<ButtonOperation operation={'-'} symbol={'-'} className="td__orange" />
 						</tr>
 						<tr>
-							<ButtonNumber digit={1} />
-							<ButtonNumber digit={2} />
-							<ButtonNumber digit={3} />
-							<ButtonOperation operation={'+'} symbol={'+'} />
+							<ButtonNumber digit={1} className="td__light-grey" />
+							<ButtonNumber digit={2} className="td__light-grey" />
+							<ButtonNumber digit={3} className="td__light-grey" />
+							<ButtonOperation operation={'+'} symbol={'+'} className="td__orange" />
 						</tr>
 						<tr>
-							<ButtonNumber digit={0} tdColSpan={2} />
-							<ButtonDot />
-							<ButtonOperation operation={'='} symbol={'='} />
+							<ButtonNumber digit={0} tdColSpan={2} className="td__light-grey" />
+							<ButtonDot className="td__light-grey" />
+							<ButtonOperation operation={'='} symbol={'='} className="td__orange" />
 						</tr>
 					</tbody>
 				</table>
-			</div>;
+			</div>
+		);
 	}
 }
 
-const mapStateToProps = ({ input, memory, displayMemory}) => ({ input, memory, displayMemory });
+const mapStateToProps = ({ input }) => ({ input });
 
 export default connect(mapStateToProps)(App);

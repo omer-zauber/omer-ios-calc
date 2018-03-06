@@ -8,8 +8,6 @@
 		"npm": "5.5.1"
 	},
 	"scripts": {
-		"build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
 		"start": "node index.js",
 		"server": "nodemon index.js",
 		"client": "npm run start --prefix client",
@@ -20,8 +18,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"concurrently": "^3.5.1",
-		"express": "^4.16.2",
-		"node-sass-chokidar": "^1.0.1"
+		"express": "^4.16.2"
 	},
 	"devDependencies": {
 		"nodemon": "^1.17.1"
