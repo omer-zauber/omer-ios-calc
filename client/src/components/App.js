@@ -16,14 +16,14 @@ class App extends Component {
 						<tr>
 							<td colSpan={4}>
 								{this.props.displayMemory
-									? parseFloat(this.props.memory)
-									: parseFloat(this.props.input)}
+									? this.props.memory
+									: (this.props.input || 0)}
 							</td>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<ButtonClear clearingAll={parseInt(this.props.input, 10) === 0} />
+							<ButtonClear clearingAll={parseFloat(this.props.input, 10) === 0} />
 							<ButtonSign />
 							<ButtonPercent />
 							<ButtonOperation operation={'/'} symbol={'÷'} />
@@ -57,6 +57,6 @@ class App extends Component {
 	}
 }
 
-const mapStateToProps = ({ input, memory, displayMemory }) => ({ input, memory, displayMemory });
+const mapStateToProps = ({ input, memory, displayMemory}) => ({ input, memory, displayMemory });
 
 export default connect(mapStateToProps)(App);

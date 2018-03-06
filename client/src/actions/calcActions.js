@@ -5,6 +5,12 @@ export const addDigit = digit => ({
 	digit,
 });
 
+export const addDot = () => ({
+	//action generator
+	type: 'ADD_DOT',
+
+});
+
 // EXECUTE_OPERATION //ONE FOR EACH? (NO - need to do 3 things - set the operation state, calculate previous memory with current screen, memory, and operation, set screen to 0)
 export const executeOperation = operation => ({
 	//action generator
