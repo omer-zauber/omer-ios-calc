@@ -11,7 +11,7 @@ class ButtonDot extends Component {
 	};
 
 	render() {
-		return <td onClick={this.handleClick}>.</td>;
+		return <button onClick={this.handleClick}>.</button>;
 	}
 }
 

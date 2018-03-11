@@ -10,7 +10,7 @@ class ButtonClear extends Component {
 	};
 
 	render() {
-		return <td onClick={this.handleClick}>{this.props.clearingAll ? 'AC' : 'C'}</td>;
+		return <button onClick={this.handleClick}>{this.props.clearingAll ? 'AC' : 'C'}</button>;
 	}
 }
 

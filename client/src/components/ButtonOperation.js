@@ -9,11 +9,7 @@ class ButtonOperation extends Component {
 	};
 
 	render() {
-		return (
-			<td onClick={this.handleClick} >
-				{this.props.symbol}
-			</td>
-		);
+		return <button onClick={this.handleClick}>{this.props.symbol}</button>;
 	}
 }
 

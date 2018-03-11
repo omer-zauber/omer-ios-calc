@@ -9,11 +9,9 @@ class ButtonNumber extends Component {
 	};
 
 	render() {
-		return (
-			<td onClick={this.handleClick} colSpan={this.props.tdColSpan || 1}>
+		return <button onClick={this.handleClick} >
 				{this.props.digit}
-			</td>
-		);
+			</button>;
 	}
 }
 

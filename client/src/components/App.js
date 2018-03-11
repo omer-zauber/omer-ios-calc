@@ -11,46 +11,82 @@ import Output from './Output';
 
 class App extends Component {
 	render() {
-		return <div>
-				<p>
-					input: {this.props.input} typeOf: {typeof this.props.input} <br />
-					memory: {this.props.memory} typeOf: {typeof this.props.memory} 
-				</p>
+		return <div className="container">
 				<table border={1} className="table">
 					<thead>
 						<tr>
-							<Output className="td__dark-grey" />
+							<td className="td__dark-grey display parent" colSpan={4}>
+								<Output />
+							</td>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<ButtonClear clearingAll={this.props.input === '0'} className="td__grey" />
-							<ButtonSign className="td__grey" />
-							<ButtonPercent className="td__grey" />
-							<ButtonOperation operation={'/'} symbol={'÷'} className="td__orange" />
+							<td className="td td__grey">
+								<ButtonClear clearingAll={this.props.input === '0'} />
+							</td>
+							<td className="td td__grey">
+								<ButtonSign />
+							</td>
+							<td className="td td__grey">
+								<ButtonPercent />
+							</td>
+							<td className="td td__orange">
+								<ButtonOperation operation={'/'} symbol={'÷'} />
+							</td>
 						</tr>
 						<tr>
-							<ButtonNumber digit={7} className="td__light-grey" />
-							<ButtonNumber digit={8} className="td__light-grey" />
-							<ButtonNumber digit={9} className="td__light-grey" />
-							<ButtonOperation operation={'x'} symbol={'X'} className="td__orange" />
+							<td className="td td__light-grey">
+								<ButtonNumber digit={7} />
+							</td>
+							<td className="td td__light-grey">
+								<ButtonNumber digit={8} />
+							</td>
+							<td className="td td__light-grey">
+								<ButtonNumber digit={9} />
+							</td>
+							<td className="td td__orange">
+								<ButtonOperation operation={'x'} symbol={'X'} />
+							</td>
 						</tr>
 						<tr>
-							<ButtonNumber digit={4} className="td__light-grey" />
-							<ButtonNumber digit={5} className="td__light-grey" />
-							<ButtonNumber digit={6} className="td__light-grey" />
-							<ButtonOperation operation={'-'} symbol={'-'} className="td__orange" />
+							<td className="td td__light-grey">
+								<ButtonNumber digit={4} />
+							</td>
+							<td className="td td__light-grey">
+								<ButtonNumber digit={5} />
+							</td>
+							<td className="td td__light-grey">
+								<ButtonNumber digit={6} />
+							</td>
+							<td className="td td__orange">
+								<ButtonOperation operation={'-'} symbol={'-'} />
+							</td>
 						</tr>
 						<tr>
-							<ButtonNumber digit={1} className="td__light-grey" />
-							<ButtonNumber digit={2} className="td__light-grey" />
-							<ButtonNumber digit={3} className="td__light-grey" />
-							<ButtonOperation operation={'+'} symbol={'+'} className="td__orange" />
+							<td className="td td__light-grey">
+								<ButtonNumber digit={1} />
+							</td>
+							<td className="td td__light-grey">
+								<ButtonNumber digit={2} />
+							</td>
+							<td className="td td__light-grey">
+								<ButtonNumber digit={3} />
+							</td>
+							<td className="td td__orange">
+								<ButtonOperation operation={'+'} symbol={'+'} />
+							</td>
 						</tr>
 						<tr>
-							<ButtonNumber digit={0} tdColSpan={2} className="td__light-grey" />
-							<ButtonDot className="td__light-grey" />
-							<ButtonOperation operation={'='} symbol={'='} className="td__orange" />
+							<td colSpan={2} className="td td__light-grey td__zero">
+								<ButtonNumber digit={0} />
+							</td>
+							<td className="td td__light-grey">
+								<ButtonDot />
+							</td>
+							<td className="td td__orange">
+								<ButtonOperation operation={'='} symbol={'='} />
+							</td>
 						</tr>
 					</tbody>
 				</table>
