@@ -9,27 +9,13 @@ import ButtonPercent from './ButtonPercent';
 import ButtonSign from './ButtonSign';
 import Output from './Output';
 
-////////////////////////
-/*
-need to figure regex for one dot
-/ ^.*\.[0-9]* / doesnt work
-
-
-BUGS:
-
-04
-0..
-0000
-
-components doesnt render styles
-
-*/
-////////////////////////
-
 class App extends Component {
 	render() {
-		return (
-			<div>
+		return <div>
+				<p>
+					input: {this.props.input} typeOf: {typeof this.props.input} <br />
+					memory: {this.props.memory} typeOf: {typeof this.props.memory} 
+				</p>
 				<table border={1} className="table">
 					<thead>
 						<tr>
@@ -38,7 +24,7 @@ class App extends Component {
 					</thead>
 					<tbody>
 						<tr>
-							<ButtonClear clearingAll={parseFloat(this.props.input) + '' === '0'} className="td__grey" />
+							<ButtonClear clearingAll={this.props.input === '0'} className="td__grey" />
 							<ButtonSign className="td__grey" />
 							<ButtonPercent className="td__grey" />
 							<ButtonOperation operation={'/'} symbol={'÷'} className="td__orange" />
@@ -68,11 +54,10 @@ class App extends Component {
 						</tr>
 					</tbody>
 				</table>
-			</div>
-		);
+			</div>;
 	}
 }
 
-const mapStateToProps = ({ input }) => ({ input });
+const mapStateToProps = ({ input, memory }) => ({ input, memory });
 
 export default connect(mapStateToProps)(App);
