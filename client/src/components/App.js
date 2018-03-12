@@ -9,13 +9,15 @@ import ButtonPercent from './ButtonPercent';
 import ButtonSign from './ButtonSign';
 import Output from './Output';
 
+
 class App extends Component {
+
 	render() {
 		return <div className="container">
 				<table border={1} className="table">
 					<thead>
 						<tr>
-							<td className="td__dark-grey display parent" colSpan={4}>
+							<td className="td__dark-grey display" colSpan={4} valign="center">
 								<Output />
 							</td>
 						</tr>

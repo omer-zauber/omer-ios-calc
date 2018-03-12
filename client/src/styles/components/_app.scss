@@ -8,20 +8,28 @@
 	border-collapse: collapse;
 	width: 333px;
 	height: 539px;
+	border: none;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .display {
 	width: 320px;
 	height: 120px;
-	font-size: 4vw;
-	font-weight: 100;
+	font-size: 76.8px;
+	margin: auto 10px;
+}
+
+.display__text {
+	font-weight: lighter;
 	text-align: right;
+	padding-right:32px;
 }
 
 .td {
 	text-align: center;
 	width: 80px;
 	height: 80px;
+
 }
 
 button {
@@ -30,7 +38,7 @@ button {
 	display: block;
 	width: 100%;
 	height: 100%;
-	font-size: 2vw;
+	font-size: 38.4px;
 	font-weight: 100;
 }
 
@@ -61,6 +69,24 @@ background: radial-gradient(transparent, rgba(0, 0, 0, 0.25));
 		text-align: left;
 		padding-left: 32px;
 	}
+}
+
+table td, table th {
+	border: 1px solid #474747;
+}
+table tr:first-child th {
+  border-top: 0;
+}
+table tr:last-child td {
+  border-bottom: 0;
+}
+table tr td:first-child,
+table tr th:first-child {
+  border-left: 0;
+}
+table tr td:last-child,
+table tr th:last-child {
+  border-right: 0;
 }
 
 //border = #474747
